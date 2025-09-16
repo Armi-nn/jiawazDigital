@@ -31,7 +31,7 @@ const Dropdown = styled(Box)({
     padding: "5px",
     borderRadius: "8px",
     background: "linear-gradient(to left, #FCF4E2 50%, #fff 50%)",
-    backgroundSize: "200% 100%",
+    backgroundSize: "200% 100%",   
     backgroundPosition: "left",
     transition: "all 0.4s ease",
   },
