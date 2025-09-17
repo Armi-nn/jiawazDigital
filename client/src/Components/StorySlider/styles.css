@@ -1,0 +1,10 @@
+.swiper-cube-shadow {
+  background: rgba(0,0,0,0.7) !important; 
+  border: none;
+}
+
+.swiper-slide {
+  background: rgba(0,0,0,0.7) !important;
+  border: none;
+
+}

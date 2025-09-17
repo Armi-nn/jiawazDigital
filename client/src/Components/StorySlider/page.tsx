@@ -1,91 +1,289 @@
 "use client";
-// import Image from "next/image";
-// import React, { useRef, useState } from "react";
-// // Import Swiper React components
-// import { Swiper, SwiperSlide } from "swiper/react";
-// // Import Swiper styles
-// import "swiper/css";
-// import "swiper/css/effect-cube";
-// import "swiper/css/pagination";
-
-// // import required modules
-// import { EffectCube, Pagination } from "swiper/modules";
-// import { Box } from "@mui/material";
-
-// export default function StorySlider() {
-//   return (
-//     <>
-//     <Box sx={{width:"300px" , height:"300px", position:"relative"}}>
-//       <Swiper
-//         effect={"cube"}
-//         grabCursor={true}
-//         cubeEffect={{
-//           shadow: true,
-//           slideShadows: true,
-//           shadowOffset: 20,
-//           shadowScale: 0.94,
-//         }}
-//         modules={[EffectCube]}
-//         className="mySwiper w-full h-full"
-//       >
-//         <SwiperSlide className="relative w-full     -full">
-//           <Image
-//             alt="nature 1"
-//             fill
-//             src={"https://swiperjs.com/demos/images/nature-1.jpg"}
-//             style={{ objectFit: "cover" }}
-//           />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <Image
-//             alt="nature 1"
-//             fill
-//             src={"https://swiperjs.com/demos/images/nature-2.jpg"}
-//             style={{ objectFit: "cover" }}
-//           />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <Image
-//             alt="nature 1"
-//             fill
-//             src={"https://swiperjs.com/demos/images/nature-3.jpg"}
-//             style={{ objectFit: "cover" }}
-//           />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <Image
-//             alt="nature 1"
-//             fill
-//             src={"https://swiperjs.com/demos/images/nature-4.jpg"}
-//             style={{ objectFit: "cover" }}
-//           />
-//         </SwiperSlide>
-//       </Swiper>
-//     </Box>
-//     </>
-//   );
-// }
-
-import React, { useRef, useState } from "react";
-// Import Swiper React components
+import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import image from "@/assets/462332218_855592660036309_765021.png";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-
-// import required modules
-import { FreeMode, Pagination } from "swiper/modules";
+import "swiper/css/effect-cube";
+import { FreeMode, EffectCube, Autoplay, Navigation } from "swiper/modules";
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
-
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import ClearIcon from "@mui/icons-material/Clear";
+import "./styles.css";
 export default function StorySlider() {
-  const [atStart, setAtStart] = useState(true);
-  const [atEnd, setAtEnd] = useState(false);
+  const [atEnd, setAtEnd] = useState<boolean>(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
+
+  function ModalSlider() {
+    const sliderRef = useRef<HTMLDivElement>();
+    const [isStart, setIsStart] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
+    const swiperRef = useRef(null);
+    const handleClickOutside = (event: MouseEvent<Document>) => {
+      if (sliderRef.current && !sliderRef.current.contains(event.target)) {
+        setShowModal(false);
+      }
+    };
+    useEffect(() => {
+      document.addEventListener("mousedown", handleClickOutside);
+    }, []);
+    const handleSlideChange = () => {
+      if (!swiperRef.current) return;
+      setIsStart(swiperRef.current.isBeginning);
+      setIsEnd(swiperRef.current.isEnd);
+    };
+
+    return (
+      <>
+        <Box
+          ref={sliderRef}
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            mr: "15px",
+            position: "relative",
+          }}
+        >
+          <Box
+            sx={{
+              width: "335px",
+              height: "600px",
+              position: "absolute",
+              zIndex: "5",
+              top: "70px",
+            }}
+          >
+            {!isEnd && (
+              <Box
+                onClick={() => swiperRef.current?.slideNext()}
+                className="custom-next"
+                sx={{
+                  position: "absolute",
+                  cursor: "pointer",
+                  zIndex: 55,
+                  top: "275px",
+                  width: "47px",
+                  height: "47px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "rgba(0, 0, 0, 0.15)",
+                  borderRadius: "15px",
+                  backdropFilter: "blur(6px)",
+                  left: "-72px",
+                  transition: "all 0.1s",
+                  "&: hover": {
+                    border: ".5px solid #fff",
+                  },
+                }}
+              >
+                <KeyboardBackspaceIcon
+                  sx={{
+                    fill: "#fff",
+                    fontSize: "24px",
+                    backgroundColor: "rgba(0, 0, 0, 0.0)",
+                  }}
+                />
+              </Box>
+            )}
+            {!isStart && (
+              <Box
+                onClick={() => swiperRef.current?.slidePrev()}
+                sx={{
+                  position: "absolute",
+                  cursor: "pointer",
+                  zIndex: 55,
+                  top: "275px",
+                  width: "47px",
+                  height: "47px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: "rgba(0, 0, 0, 0.3)",
+                  borderRadius: "15px",
+                  backdropFilter: "blur(6px)",
+                  left: "360px",
+                  transition: "all 0.1s",
+                  "&: hover": {
+                    border: ".5px solid #fff",
+                  },
+                }}
+              >
+                <KeyboardBackspaceIcon
+                  sx={{
+                    fill: "#fff",
+                    fontSize: "24px",
+                    backgroundColor: "rgba(0, 0, 0, 0.0)",
+                    transform: "rotate(180deg)",
+                  }}
+                />
+              </Box>
+            )}
+            <Box
+              onClick={() => {
+                setShowModal(false);
+              }}
+              sx={{
+                position: "absolute",
+                cursor: "pointer",
+                zIndex: 55,
+                top: "10px",
+                width: "47px",
+                height: "47px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "rgba(0, 0, 0, 0.0)",
+                transition: "all .5s",
+                "&:hover": {
+                  backgroundColor: "rgba(0, 0, 0, 0.3)",
+                },
+                borderRadius: "15px",
+                backdropFilter: "blur(6px)",
+                right: "10px",
+              }}
+            >
+              <ClearIcon
+                sx={{
+                  fill: "#fff",
+                  fontSize: "24px",
+                  backgroundColor: "rgba(0, 0, 0, 0.0)",
+                  transform: "rotate(180deg)",
+                }}
+              />
+            </Box>
+            <Swiper
+              onSwiper={(swiper) => (swiperRef.current = swiper)} // ✅ اضافه شد: ذخیره Swiper در ref
+              onSlideChange={handleSlideChange}
+              style={{
+                backgroundColor: "rgba(0,0,0,0.6)",
+                backdropFilter: "blur(6px)",
+                position: "absolute",
+              }}
+              dir="rtl"
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              effect={"cube"}
+              grabCursor={true}
+              cubeEffect={{
+                shadow: false,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+              }}
+              modules={[EffectCube, Autoplay, Navigation]}
+              className="mySwiper w-full h-full"
+            >
+              <SwiperSlide>
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: "15px",
+                    backgroundColor: "rgba(0,0,0,0.3)",
+                    backdropFilter: "blur(6px)",
+                  }}
+                >
+                  <Image
+                    alt="nature 1"
+                    fill
+                    src={"https://swiperjs.com/demos/images/nature-1.jpg"}
+                    style={{ objectFit: "cover" }}
+                  />
+                </Box>
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: "15px",
+                    backgroundColor: "rgba(0,0,0,0.3)",
+                    backdropFilter: "blur(6px)",
+                  }}
+                >
+                  <Image
+                    alt="nature 1"
+                    fill
+                    src={"https://swiperjs.com/demos/images/nature-2.jpg"}
+                    style={{ objectFit: "cover" }}
+                  />
+                </Box>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: "15px",
+                    backgroundColor: "rgba(0,0,0,0.3)",
+                    backdropFilter: "blur(6px)",
+                  }}
+                >
+                  <Image
+                    alt="nature 1"
+                    fill
+                    src={"https://swiperjs.com/demos/images/nature-3.jpg"}
+                    style={{ objectFit: "cover" }}
+                  />
+                </Box>
+              </SwiperSlide>
+              <SwiperSlide>
+                <Box
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    position: "relative",
+                    overflow: "hidden",
+                    borderRadius: "15px",
+                    backgroundColor: "rgba(0,0,0,0.3)",
+                    backdropFilter: "blur(6px)",
+                  }}
+                >
+                  <Image
+                    alt="nature 1"
+                    fill
+                    src={"https://swiperjs.com/demos/images/nature-4.jpg"}
+                    style={{ objectFit: "cover" }}
+                  />
+                </Box>
+              </SwiperSlide>
+            </Swiper>
+          </Box>
+        </Box>
+      </>
+    );
+  }
   return (
     <>
+      {showModal && (
+        <Box
+          sx={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100vw",
+            height: "100vh",
+            backgroundColor: "rgba(0,0,0,0.7)",
+            backdropFilter: "blur(6px)",
+            zIndex: 10,
+          }}
+        >
+          <ModalSlider />
+        </Box>
+      )}
+
       <Box
         sx={{
           width: "88vw",
@@ -145,11 +343,16 @@ export default function StorySlider() {
               modules={[FreeMode]}
               className=" w-full h-full "
               onSlideChange={(swiper) => {
-                setAtStart(swiper.isBeginning);
                 setAtEnd(swiper.isEnd);
               }}
             >
-              <SwiperSlide style={{ cursor: "pointer" }} className="relative">
+              <SwiperSlide
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                style={{ cursor: "pointer" }}
+                className="relative"
+              >
                 <Box
                   sx={{
                     display: "flex",
