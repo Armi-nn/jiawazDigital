@@ -1,0 +1,24 @@
+.swiper-pagination {
+  background-color: transparent;
+  width: 90px !important;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  margin: 0px 0px 12px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+
+.swiper-pagination-bullet {
+  border: none;
+background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(15px);
+}
+
+.swiper-pagination-bullet-active {
+  border: none;
+  background-color: #ff6600;
+}
