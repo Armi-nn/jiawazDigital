@@ -1,0 +1,11 @@
+/* Make Swiper and all internal wrappers transparent */
+.inner-box{
+  background-color: transparent !important;
+}
+
+/* اگر Pagination یا Navigation داری */
+.custom-swiper .swiper-button-next,
+.custom-swiper .swiper-button-prev,
+.custom-swiper .swiper-pagination {
+  background-color: transparent !important;
+}
