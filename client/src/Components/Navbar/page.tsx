@@ -31,7 +31,7 @@ const Dropdown = styled(Box)({
     padding: "5px",
     borderRadius: "8px",
     background: "linear-gradient(to left, #FCF4E2 50%, #fff 50%)",
-    backgroundSize: "200% 100%",   
+    backgroundSize: "200% 100%",
     backgroundPosition: "left",
     transition: "all 0.4s ease",
   },
@@ -255,6 +255,7 @@ export default function Navbar() {
                     mt: "5px",
                     mr: "3px",
                     pb: "3px",
+                    cursor:"pointer"
                   },
                 }}
               >
@@ -400,7 +401,9 @@ export default function Navbar() {
                 </Dropdown>
               </NavbarItem>
               <NavbarItem sx={{ position: "relative" }}>
-                <KeyboardArrowDownIcon sx={{ backgroundColor: "#FFFFFF" }} />
+                <KeyboardArrowDownIcon
+                  sx={{ backgroundColor: "#FFFFFF", height: 20 }}
+                />
                 <Typography component="p" sx={{ backgroundColor: "#FFFFFF" }}>
                   کامپیوتر
                 </Typography>
@@ -466,7 +469,9 @@ export default function Navbar() {
               </NavbarItem>
 
               <NavbarItem>
-                <KeyboardArrowDownIcon sx={{ backgroundColor: "#FFFFFF" }} />
+                <KeyboardArrowDownIcon
+                  sx={{ backgroundColor: "#FFFFFF", height: 20 }}
+                />
                 <Typography sx={{ backgroundColor: "#FFFFFF" }}>
                   موبایل
                 </Typography>

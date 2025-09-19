@@ -1,0 +1,7 @@
+
+.swiper-slide-custom {
+  background-color: transparent !important;
+}
+.swiper-slide-custom .inner-box {
+  background-color: #fffdf5 !important  ;
+}

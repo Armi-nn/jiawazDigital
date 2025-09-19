@@ -292,6 +292,7 @@ export default function StorySlider() {
           maxWidth: "88vw",
           mx: "auto ",
           mt: "25px",
+
         }}
       >
         <Box
@@ -299,7 +300,7 @@ export default function StorySlider() {
             position: "relative",
             width: "100%",
             direction: "rtl",
-            height: { xs: "200px", md: "300px" },
+            height: "155px",
             maxWidth: "88vw",
           }}
         >

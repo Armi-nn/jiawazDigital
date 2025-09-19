@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Box } from "@mui/material";
 import Image from "next/image";
-import image from "../../assets/desktop2-scaled.png";
+import image from "@/assets/desktop2-scaled.png";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "./styles.css";
 export default function BannerSlider() {
