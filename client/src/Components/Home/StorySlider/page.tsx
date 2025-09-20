@@ -352,7 +352,7 @@ export default function StorySlider() {
                   setShowModal(true);
                 }}
                 style={{ cursor: "pointer" }}
-                className="relative"
+                className="relative slides"
               >
                 <Box
                   sx={{
@@ -380,7 +380,13 @@ export default function StorySlider() {
                   </Typography>
                 </Box>
               </SwiperSlide>
-              <SwiperSlide style={{ cursor: "pointer" }} className="relative">
+              <SwiperSlide
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                style={{ cursor: "pointer" }}
+                className="relative slides"
+              >
                 <Box
                   sx={{
                     display: "flex",
@@ -407,7 +413,13 @@ export default function StorySlider() {
                   </Typography>
                 </Box>
               </SwiperSlide>
-              <SwiperSlide style={{ cursor: "pointer" }} className="relative">
+              <SwiperSlide
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                style={{ cursor: "pointer" }}
+                className="relative slides"
+              >
                 <Box
                   sx={{
                     display: "flex",
@@ -434,7 +446,13 @@ export default function StorySlider() {
                   </Typography>
                 </Box>
               </SwiperSlide>
-              <SwiperSlide style={{ cursor: "pointer" }} className="relative">
+              <SwiperSlide
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                style={{ cursor: "pointer" }}
+                className="relative slides"
+              >
                 <Box
                   sx={{
                     display: "flex",
@@ -461,7 +479,13 @@ export default function StorySlider() {
                   </Typography>
                 </Box>
               </SwiperSlide>
-              <SwiperSlide style={{ cursor: "pointer" }} className="relative">
+              <SwiperSlide
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                style={{ cursor: "pointer" }}
+                className="relative slides"
+              >
                 <Box
                   sx={{
                     display: "flex",
@@ -488,7 +512,13 @@ export default function StorySlider() {
                   </Typography>
                 </Box>
               </SwiperSlide>
-              <SwiperSlide style={{ cursor: "pointer" }} className="relative">
+              <SwiperSlide
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                style={{ cursor: "pointer" }}
+                className="relative slides"
+              >
                 <Box
                   sx={{
                     display: "flex",
@@ -515,7 +545,13 @@ export default function StorySlider() {
                   </Typography>
                 </Box>
               </SwiperSlide>
-              <SwiperSlide style={{ cursor: "pointer" }} className="relative">
+              <SwiperSlide
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                style={{ cursor: "pointer" }}
+                className="relative slides"
+              >
                 <Box
                   sx={{
                     display: "flex",
@@ -542,7 +578,13 @@ export default function StorySlider() {
                   </Typography>
                 </Box>
               </SwiperSlide>
-              <SwiperSlide style={{ cursor: "pointer" }} className="relative">
+              <SwiperSlide
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                style={{ cursor: "pointer" }}
+                className="relative slides"
+              >
                 <Box
                   sx={{
                     display: "flex",
@@ -569,6 +611,7 @@ export default function StorySlider() {
                   </Typography>
                 </Box>
               </SwiperSlide>
+              
               <SwiperSlide style={{ cursor: "pointer" }} className="relative">
                 <Box
                   sx={{

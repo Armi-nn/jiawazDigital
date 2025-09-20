@@ -8,6 +8,7 @@ import BannerSlider from "@/Components/Home/BannerSlider/page";
 import CategorySlider from "@/Components/Home/CategorySlider/page";
 import ProductSlider from "@/Components/Home/ProductSlider/page";
 import BestCategory from "@/Components/Home/BestCategory/page";
+import NewestProductSlider from "@/Components/Home/NewestProductSlider/page";
 
 export default function Home() {
   return (
@@ -84,6 +85,7 @@ export default function Home() {
           />
         </Box>
       </Box>
+      <NewestProductSlider/>
     </>
   );
 }
