@@ -229,7 +229,7 @@ export default function Footer() {
                   display: "flex",
                   gap: "10px",
                 }}
-               >
+              >
                 <Box
                   sx={{
                     width: "54px",
@@ -240,7 +240,7 @@ export default function Footer() {
                     alignItems: "center",
                     borderRadius: "8px",
                   }}
-                 >
+                >
                   <EmailIcon
                     sx={{
                       backgroundColor: "#D48817",
@@ -525,17 +525,17 @@ export default function Footer() {
                 height: "50px",
                 borderRadius: "25px 25px 0px 0px",
                 backgroundColor: "#EFA71A",
-                display:"flex",
-                justifyContent:"center",
-                alignItems:"center",
-                gap:"80px"
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "80px",
               }}
             >
               <Typography
                 sx={{
                   backgroundColor: "transparent",
                   color: "#fff",
-                  fontSize:"14px"
+                  fontSize: "14px",
                 }}
               >
                 کلیه حقوق متعلق به جیاواز میباشد.
@@ -544,8 +544,7 @@ export default function Footer() {
                 sx={{
                   backgroundColor: "transparent",
                   color: "#fff",
-                  fontSize:"14px"
-
+                  fontSize: "14px",
                 }}
               >
                 پیاده سازی توسط : آرمین حسینی

@@ -86,8 +86,8 @@ export default function contentUs() {
           </Box>
           <Box
             sx={{
-              width: "39vw",
-              maxWidth: "39vw",
+              width: "43vw",
+              maxWidth: "43vw",
               height: "745px",
               backgroundColor: "#fff",
               boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
@@ -337,8 +337,8 @@ export default function contentUs() {
         </Box>
         <Box
           sx={{
-            width: "39vw",
-            maxWidth: "39vw",
+            width: "43vw",
+            maxWidth: "43vw",
             height: "647px",
             backgroundColor: "#fff",
             boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)",
