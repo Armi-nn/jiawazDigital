@@ -229,7 +229,7 @@ export default function Footer() {
                   display: "flex",
                   gap: "10px",
                 }}
-              >
+               >
                 <Box
                   sx={{
                     width: "54px",
@@ -240,7 +240,7 @@ export default function Footer() {
                     alignItems: "center",
                     borderRadius: "8px",
                   }}
-                >
+                 >
                   <EmailIcon
                     sx={{
                       backgroundColor: "#D48817",

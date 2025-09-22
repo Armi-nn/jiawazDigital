@@ -12,6 +12,11 @@ import ProductSlider from "@/Components/Home/ProductSlider/page";
 import BestCategory from "@/Components/Home/BestCategory/page";
 import NewestProductSlider from "@/Components/Home/NewestProductSlider/page";
 
+export const metadata = {
+  title: "جیاواز | فروشگاه کالای دیجیتال",
+  description: "صفحه اصلی فروشگاه اینترنتی جیاواز.",
+};
+
 export default function Home() {
   return (
     <>
@@ -87,8 +92,8 @@ export default function Home() {
           />
         </Box>
       </Box>
-      <NewestProductSlider/>
-         <Box
+      <NewestProductSlider />
+      <Box
         sx={{
           position: "relative",
           display: "flex",

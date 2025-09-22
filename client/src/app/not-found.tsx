@@ -6,9 +6,10 @@ import Navbar from "@/Components/Navbar/page";
 import Footer from "@/Components/Footer/page";
 
 export const metadata = {
-  title: "NotFound",
-  description: "PageNotFound(404)",
+  title: "برگه پیدا نشد | جیاواز",
+  description: "متأسفیم! صفحه‌ای که دنبال آن بودید پیدا نشد.",
 };
+
 export default function notFond() {
   return (
     <>
